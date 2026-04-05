@@ -1,0 +1,120 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.admin-page {
+  min-height: 100vh;
+  padding: 22px;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
+  color: #fff;
+}
+
+.admin-page h1 { margin: 0 0 16px; text-align: center; }
+
+.admin-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.admin-actions .btn {
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  min-width: 90px;
+  border-radius: 10px;
+}
+
+.admin-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tab-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: linear-gradient(135deg, #22d3ee, #3b82f6);
+  border-color: transparent;
+}
+
+.admin-panel {
+  background: rgba(255,255,255,0.93);
+  color: #0f172a;
+  border-radius: 18px;
+  border: 1px solid rgba(148,163,184,0.4);
+  padding: 18px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.market-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid rgba(15,23,42,0.2);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.market-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.market-form input {
+  border: 1px solid rgba(15,23,42,0.2);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+thead th {
+  text-align: left;
+  padding: 10px;
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #dbeafe;
+}
+
+.btn { border: none; border-radius: 12px; padding: 10px 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+
+.btn-primary { background: linear-gradient(135deg, #2196f3, #3b82f6); color: white; }
+.btn-secondary { background: linear-gradient(135deg, #4caf50, #22c55e); color: white; }
+.btn-success { background: linear-gradient(135deg, #10b981, #22c55e); color: white; }
+.btn-danger { background: linear-gradient(135deg, #ef4444, #dc2626); color: white; }
+
+@media (max-width: 900px) {
+  .market-form { grid-template-columns: 1fr; }
+  .market-top { flex-direction: column; align-items: stretch; }
+}

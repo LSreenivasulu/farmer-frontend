@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
 
 const containerStyle = {
   width: "100%",
@@ -39,6 +39,7 @@ function MapView({ markets = [] }) {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [nearest, setNearest] = useState(null);
   const [error, setError] = useState("");
+  const [pickedLocations, setPickedLocations] = useState([]);
 
   // 📍 GET USER LOCATION
   useEffect(() => {
@@ -85,6 +86,17 @@ function MapView({ markets = [] }) {
 
   }, [currentLocation, markets]);
 
+  // 📍 LOCATION PICKER COMPONENT
+  function LocationPicker() {
+    useMapEvents({
+      click: (e) => {
+        const { lat, lng } = e.latlng;
+        setPickedLocations(prev => [...prev, { lat, lng }]);
+      },
+    });
+    return null;
+  }
+
   // 📍 DEFAULT CENTER (Bangalore)
   const center = currentLocation || { lat: 12.9716, lng: 77.5946 };
 
@@ -117,37 +129,51 @@ function MapView({ markets = [] }) {
         </div>
       )}
 
-      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_KEY}>
+      <MapContainer center={[center.lat, center.lng]} zoom={10} style={containerStyle}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='© OpenStreetMap contributors'
+        />
+        <LocationPicker />
 
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={7}
-        >
+        {/* 🟢 USER */}
+        {currentLocation && (
+          <Marker position={[currentLocation.lat, currentLocation.lng]}>
+            <Popup>You</Popup>
+          </Marker>
+        )}
 
-          {/* 🟢 USER */}
-          {currentLocation && (
-            <Marker position={currentLocation} label="You" />
-          )}
+        {/* 🔴 MARKETS */}
+        {markets.map((m, i) => {
+          const coords = cityCoordinates[m.location];
+          if (!coords) return null;
 
-          {/* 🔴 MARKETS */}
-          {markets.map((m, i) => {
+          return (
+            <Marker key={i} position={[coords.lat, coords.lng]}>
+              <Popup>{m.marketName}</Popup>
+            </Marker>
+          );
+        })}
 
-            const coords = cityCoordinates[m.location];
-            if (!coords) return null;
+        {/* 🛒 PICKED LOCATIONS */}
+        {pickedLocations.map((loc, i) => (
+          <Marker key={`picked-${i}`} position={[loc.lat, loc.lng]}>
+            <Popup>Placed at {loc.lat.toFixed(4)}, {loc.lng.toFixed(4)}</Popup>
+          </Marker>
+        ))}
+      </MapContainer>
 
-            return (
-              <Marker
-                key={i}
-                position={coords}
-                label={m.marketName}
-              />
-            );
-          })}
-
-        </GoogleMap>
-
-      </LoadScript>
+      {/* PICKED LOCATIONS LIST */}
+      {pickedLocations.length > 0 && (
+        <div style={{ marginTop: "10px" }}>
+          <h3>Picked Locations</h3>
+          <ul>
+            {pickedLocations.map((loc, i) => (
+              <li key={i}>Lat: {loc.lat.toFixed(4)}, Lng: {loc.lng.toFixed(4)}</li>
+            ))}
+          </ul>
+        </div>
+      )}
 
     </div>
   );

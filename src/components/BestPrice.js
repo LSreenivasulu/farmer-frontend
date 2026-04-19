@@ -55,7 +55,7 @@ function BestPrice() {
     setData(null);
 
     try {
-      const response = await fetch(`http://localhost:8081/api/market/best/${productName}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/market/best/${productName}`);
       if (!response.ok) {
         setError("No market price found for this product.");
         return;

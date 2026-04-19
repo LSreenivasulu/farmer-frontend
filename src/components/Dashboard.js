@@ -5,7 +5,7 @@ import MapView from "./MapView";
 import Orders from "./Orders";
 import "./Dashboard.css";
 
-const API_BASE = "http://localhost:8081/api";
+const API_BASE = `${process.env.REACT_APP_API_URL}/api`;
 
 function Dashboard({ setPage }) {
   const [activeComponent, setActiveComponent] = useState("bestPrice");

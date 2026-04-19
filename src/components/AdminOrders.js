@@ -31,7 +31,7 @@ export default function AdminOrders() {
   const fetchAllOrders = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:8081/api/orders");
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/orders`);
       if (!response.ok) throw new Error("Failed to load orders");
 
       const data = await response.json();
@@ -78,7 +78,7 @@ export default function AdminOrders() {
 
     // Fetch market prices for this product
     try {
-      const response = await fetch(`http://localhost:8081/api/market/best/${order.productName}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/market/best/${order.productName}`);
       if (response.ok) {
         const marketData = await response.json();
         setMarketPrices([marketData]); // Wrap in array for consistency
@@ -98,7 +98,7 @@ export default function AdminOrders() {
     try {
       setLoading(true);
       const response = await fetch(
-        `http://localhost:8081/api/orders/${selectedOrder.orderId}/response`,
+        `${process.env.REACT_APP_API_URL}/api/orders/${selectedOrder.orderId}/response`,
         {
           method: "PUT",
           headers: {

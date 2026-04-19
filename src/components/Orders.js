@@ -1,7 +1,7 @@
 ﻿import React, { useState, useEffect, useCallback } from "react";
 import "./Orders.css";
 
-const API_BASE = "http://localhost:8081/api/orders"; // ✅ FIXED
+const API_BASE = `${process.env.REACT_APP_API_URL}/api/orders`; // ✅ FIXED
 
 export default function Orders() {
 

@@ -23,7 +23,7 @@ function Admin({ setPage }) {
   const loadData = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:8081/api/admin/all");
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/all`);
       if (!res.ok) throw new Error(res.status);
       const result = await res.json();
       setData(Array.isArray(result) ? result : []);
@@ -43,7 +43,7 @@ function Admin({ setPage }) {
 
     try {
       setLoading(true);
-      const url = editId ? `http://localhost:8081/api/admin/update/${editId}` : "http://localhost:8081/api/admin/add";
+      const url = editId ? `${process.env.REACT_APP_API_URL}/api/admin/update/${editId}` : `${process.env.REACT_APP_API_URL}/api/admin/add`;
       const method = editId ? "PUT" : "POST";
       const res = await fetch(url, {
         method,
@@ -71,7 +71,7 @@ function Admin({ setPage }) {
 
     try {
       setLoading(true);
-      const res = await fetch(`http://localhost:8081/api/admin/delete/${id}`, { method: "DELETE" });
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/delete/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error(res.status);
       loadData();
     } catch (error) {

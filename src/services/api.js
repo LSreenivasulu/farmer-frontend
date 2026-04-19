@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8081/api";
+const BASE_URL = `${process.env.REACT_APP_API_URL}/api`;
 
 // ✅ SIGNUP API
 export const signup = async (data) => {
@@ -23,7 +23,7 @@ export const signup = async (data) => {
     console.error("Signup API error:", error);
 
     if (error instanceof TypeError || /Failed to fetch/i.test(error.message)) {
-      throw new Error("Cannot reach backend. Start API server at http://localhost:8081");
+      throw new Error(`Cannot reach backend. Start API server at ${process.env.REACT_APP_API_URL}`);
     }
 
     throw error;
@@ -51,7 +51,7 @@ export const login = async (data) => {
     console.error("Login API error:", error);
 
     if (error instanceof TypeError || /Failed to fetch/i.test(error.message)) {
-      throw new Error("Cannot reach backend. Start API server at http://localhost:8081");
+      throw new Error(`Cannot reach backend. Start API server at ${process.env.REACT_APP_API_URL}`);
     }
 
     throw error;

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="farmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d7d46" />
+      <stop offset="100%" stop-color="#66c18b" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="#ffffff" opacity="0.06" />
+  <path d="M24 80 C28 60, 40 50, 58 50 C76 50, 88 60, 92 80 Z" fill="url(#farmGrad)" />
+  <rect x="44" y="36" width="32" height="28" rx="8" fill="url(#farmGrad)" />
+  <path d="M50 36 L60 18 L70 36 Z" fill="#ffffff" />
+  <circle cx="42" cy="85" r="7" fill="#ffffff" opacity="0.85" />
+  <circle cx="78" cy="85" r="7" fill="#ffffff" opacity="0.85" />
+  <text x="60" y="104" text-anchor="middle" font-family="Poppins, sans-serif" font-size="12" fill="#ffffff" opacity="0.9">SREENUS</text>
+</svg>

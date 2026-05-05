@@ -1,5 +1,6 @@
 ﻿import React from "react";
 import "./Landing.css";
+import logo from "../assets/logo.svg";
 
 function Landing({ setPage }) {
   return (
@@ -7,7 +8,13 @@ function Landing({ setPage }) {
       <div className="overlay" />
 
       <header className="landing-top">
-        <h1>🌾 Farm Market</h1>
+        <div className="landing-brand">
+          <img src={logo} alt="Sreenus Farm Markete logo" className="landing-logo" />
+          <div>
+            <h1>Sreenus Farm Markete</h1>
+            <p className="brand-subtitle">Designed by L. Sreenivasulu</p>
+          </div>
+        </div>
         <p>Smart farming platform for buying, selling, and market insights.</p>
       </header>
 
@@ -60,6 +67,9 @@ function Landing({ setPage }) {
             </article>
           </div>
         </section>
+        <div className="designer-credit">
+          Designed by L. Sreenivasulu · Phone: 6301600267
+        </div>
       </main>
     </div>
   );

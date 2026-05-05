@@ -27,6 +27,24 @@
   margin-bottom: 28px;
 }
 
+.landing-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.landing-logo {
+  width: 74px;
+  height: 74px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.18);
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
 .landing-top h1 {
   margin: 0;
   font-size: clamp(1.8rem, 4vw, 3.4rem);
@@ -43,6 +61,27 @@
   opacity: 0.95;
   color: #ffffff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.brand-subtitle {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  opacity: 0.92;
+  color: #e9f5ff;
+}
+
+.designer-credit {
+  margin: 20px auto 0;
+  max-width: 700px;
+  padding: 18px 22px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 16px;
+  color: #f6f9ff;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
 }
 
 .landing-content {

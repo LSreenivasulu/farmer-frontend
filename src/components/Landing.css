@@ -9,7 +9,7 @@
   padding: 40px 20px;
   font-family: "Poppins", "Segoe UI", sans-serif;
   color: #fff;
-  background: linear-gradient(135deg, #4caf50 0%, #2196f3 45%, #8e44ad 100%);
+  background: linear-gradient(135deg, #184e2b 0%, #4caf50 50%, #ffb74d 100%);
   position: relative;
   overflow: hidden;
 }
@@ -17,7 +17,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.25);
+  background: rgba(6, 6, 6, 0.2);
   z-index: 1;
 }
 
@@ -51,7 +51,8 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  text-shadow: 0 6px 14px rgba(0,0,0,0.22);
+  color: #fffde7;
 }
 
 .landing-top p {
@@ -59,25 +60,25 @@
   max-width: 600px;
   font-size: 1.1rem;
   opacity: 0.95;
-  color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  color: #fff9f0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
 }
 
 .brand-subtitle {
   margin: 6px 0 0;
   font-size: 0.95rem;
   opacity: 0.92;
-  color: #e9f5ff;
+  color: #fff8e1;
 }
 
 .designer-credit {
   margin: 20px auto 0;
   max-width: 700px;
   padding: 18px 22px;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.22);
   border-radius: 16px;
-  color: #f6f9ff;
+  color: #fffef6;
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -92,10 +93,10 @@
 }
 
 .hero-card {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
   border-radius: 18px;
-  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.22);
   padding: 30px;
   display: flex;
   flex-wrap: wrap;
@@ -117,7 +118,7 @@
 .hero-card p {
   margin: 0 0 16px;
   max-width: 540px;
-  color: #f0f8ff;
+  color: #fffcf5;
 }
 
 .cta-buttons {
@@ -139,12 +140,12 @@
 
 .btn-primary {
   color: white;
-  background: linear-gradient(135deg, #00b09b, #96c93d);
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
 }
 
 .btn-secondary {
   color: #fff;
-  background: linear-gradient(135deg, #5c6bc0, #304ffe);
+  background: linear-gradient(135deg, #ff9800, #ff7043);
 }
 
 .btn-primary:hover,
@@ -165,10 +166,10 @@
 }
 
 .pill {
-  background: rgba(255,255,255,0.25);
-  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.28);
   border-radius: 999px;
-  color: #fff;
+  color: #fffef6;
   padding: 8px 14px;
   font-weight: 600;
 }
@@ -190,12 +191,12 @@
 }
 
 .feature-card {
-  background: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.12);
   border-radius: 15px;
-  border: 1px solid rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.22);
   padding: 16px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
   text-align: center;
   transition: all 0.3s ease;
 }

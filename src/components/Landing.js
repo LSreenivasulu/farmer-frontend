@@ -8,10 +8,10 @@ function Landing({ setPage }) {
       <div className="overlay" />
 
       <header className="landing-top">
-        <div className="landing-brand">
-          <img src={logo} alt="Sreenus Farm Markete logo" className="landing-logo" />
+          <div className="landing-brand">
+          <img src={logo} alt="SREENU's Smart Farm Market logo" className="landing-logo" />
           <div>
-            <h1>Sreenus Farm Markete</h1>
+            <h1>SREENU's SMART FARM MARKET</h1>
             <p className="brand-subtitle">Designed by L. Sreenivasulu</p>
           </div>
         </div>
